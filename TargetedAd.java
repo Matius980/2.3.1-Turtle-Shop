@@ -1,6 +1,4 @@
-/*
- * Problem 2.3.1 Sell My Pet Food
- */
+
 public class TargetedAd {
 
   public static void main(String[] args)
@@ -19,22 +17,20 @@ public class TargetedAd {
       * DONE
       * (3) Create a String variable to hold the names of all the user. (The first word of every post is 
       *     a person's username)
-     *  DONE
+     * 
      * (4) Compare each user's post to each target word. If a user mentions a target word, add their username to 
      *     the String of users. Separate usernames with a space. 
      *         Hint: You can use loops to look through each word. 
      *         Hint2: You can use indexOf to check if a word is in a user post. 
-    *    DONE
      * (5) Once you have all the users, use your DataCollector's prepareAdvertisement method to prepare a file 
      *     with all users and the advertisement you will send them.
      *         Additional Info: The prepareAdvertisement creates a new file on your computer. Check the posts of
      *         some of the usernames to make sure your algorithm worked.
-     *     DONE
+     * 
      * THE FINAL SOLUTION
      * (6) Your solution should work with the socialMedialPostsSmall.txt. Modify your DataCollector initialization
      *    so you use the socialMediaPosts.txt. You should now have a larger file of users to target.
-      * DONE
-     */    
+     */
 
 
     /* your code here */
@@ -42,13 +38,11 @@ public class TargetedAd {
 
     DataCollector data = new DataCollector();
 
-    // 1) Use the small dataset to develop and verify the algorithm
     data.setData("socialMediaPostsSmall.txt", "targetWords.txt");
-    java.util.Set<String> usernamesSet = new java.util.HashSet<String>();
+    java.util.ArrayList<String> usernamesSet = new java.util.ArrayList<>();
 
     String post;
     while (!(post = data.getNextPost()).equals("NONE")) {
-      // first token in the post is the username
       String[] parts = post.split(" ");
       if (parts.length == 0) continue;
       String username = parts[0];
@@ -68,11 +62,9 @@ public class TargetedAd {
     }
     String users = usersBuilder.toString();
 
-    // prepare an advertisement file for the small dataset
     data.prepareAdvertisement("adSmall.txt", users, "Check out our turtle food deal!");
     System.out.println("Wrote adSmall.txt for " + usernamesSet.size() + " users.");
 
-    // 2) Now run the same algorithm on the full dataset
     data = new DataCollector();
     data.setData("socialMediaPosts.txt", "targetWords.txt");
     usernamesSet.clear();
@@ -102,4 +94,5 @@ public class TargetedAd {
   }
 
 }
+
 
