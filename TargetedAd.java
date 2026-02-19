@@ -1,4 +1,6 @@
-
+/*
+ * Problem 2.3.1 Sell My Pet Food
+ */
 public class TargetedAd {
 
   public static void main(String[] args)
@@ -67,7 +69,7 @@ public class TargetedAd {
 
     data = new DataCollector();
     data.setData("socialMediaPosts.txt", "targetWords.txt");
-    usernamesSet.clear();
+    usernamesSet = new java.util.ArrayList<>();
 
     while (!(post = data.getNextPost()).equals("NONE")) {
       String[] parts2 = post.split(" ");
