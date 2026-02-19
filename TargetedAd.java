@@ -19,20 +19,22 @@ public class TargetedAd {
       * DONE
       * (3) Create a String variable to hold the names of all the user. (The first word of every post is 
       *     a person's username)
-     * 
+     *  DONE
      * (4) Compare each user's post to each target word. If a user mentions a target word, add their username to 
      *     the String of users. Separate usernames with a space. 
      *         Hint: You can use loops to look through each word. 
      *         Hint2: You can use indexOf to check if a word is in a user post. 
+    *    DONE
      * (5) Once you have all the users, use your DataCollector's prepareAdvertisement method to prepare a file 
      *     with all users and the advertisement you will send them.
      *         Additional Info: The prepareAdvertisement creates a new file on your computer. Check the posts of
      *         some of the usernames to make sure your algorithm worked.
-     * 
+     *     DONE
      * THE FINAL SOLUTION
      * (6) Your solution should work with the socialMedialPostsSmall.txt. Modify your DataCollector initialization
      *    so you use the socialMediaPosts.txt. You should now have a larger file of users to target.
-     */
+      * DONE
+     */    
 
 
     /* your code here */
@@ -67,7 +69,7 @@ public class TargetedAd {
     String users = usersBuilder.toString();
 
     // prepare an advertisement file for the small dataset
-    data.prepareAdvertisement("adSmall.txt", users, "Check out our pet food deal!");
+    data.prepareAdvertisement("adSmall.txt", users, "Check out our turtle food deal!");
     System.out.println("Wrote adSmall.txt for " + usernamesSet.size() + " users.");
 
     // 2) Now run the same algorithm on the full dataset
@@ -94,9 +96,10 @@ public class TargetedAd {
       usersBuilder.append(u);
     }
     users = usersBuilder.toString();
-    data.prepareAdvertisement("adFull.txt", users, "Check out our pet food deal!");
+    data.prepareAdvertisement("adFull.txt", users, "Check out our turtle food deal!");
     System.out.println("Wrote adFull.txt for " + usernamesSet.size() + " users.");
      
   }
 
 }
+
